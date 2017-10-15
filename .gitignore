@@ -2,5 +2,8 @@
 *.id*
 *.nam
 *.til
+*~
+.\#*
+\#*
 core
 .gdb_history
