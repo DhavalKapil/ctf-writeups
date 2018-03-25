@@ -1,0 +1,28 @@
+It looks like a lot of characters are filtered out.
+
+Running this reveals chars which are left:
+ ;1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./`~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?
+bash: -c: line 0: syntax error near unexpected token `;'
+bash: -c: line 0: `;-;#$^_+QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM<>'
+
+Let's check the environment variable `_`:
+> `${_}`
+declare -x A="T"
+declare -x AB="HI"
+declare -x ABC="ISN"
+declare -x ABCD="OTTH"
+declare -x ABCDE="EFLAG"
+declare -x ABCDEF="BUTMAY"
+declare -x ABCDEFG="BEITCAN"
+declare -x ABCDEFGH="HELPGETT"
+declare -x ABCDEFGHI="INGFLAG:D"
+declare -x OLDPWD
+declare -x PWD="/home/special"
+declare -x SHELL=""
+declare -x SHLVL="1"
+declare -x _="export"
+
+Finally: ${PWD:${#ABCDEF}:${#A}}${PWD:${#A}:${#A}}
+^ parses to 'sh'
+
+Flag{B4sh_subst1tut1on_is_gud!}
